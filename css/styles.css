@@ -1340,4 +1340,10 @@ body {
   -webkit-animation: logoSU 2s linear infinite forwards;
           animation: logoSU 2s linear infinite forwards;
 }
+
+@media (max-width: 700px) {
+  .containerP .container1 .sulogo {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
