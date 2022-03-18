@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 :root {
   scroll-behavior: smooth;
+  --album_1: 0% at 75% 50%;
+  --color: #823a8b;
 }
 
 *,
@@ -260,12 +262,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album1 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album1 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album1 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album1 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album1 .buttons .btn1 {
@@ -364,12 +401,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album2 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album2 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album2 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album2 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album2 .buttons .btn1 {
@@ -468,12 +540,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album3 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album3 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album3 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album3 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album3 .buttons .btn1 {
@@ -572,12 +679,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album4 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album4 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album4 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album4 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album4 .buttons .btn1 {
@@ -676,12 +818,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album5 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album5 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album5 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album5 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album5 .buttons .btn1 {
@@ -780,12 +957,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album6 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album6 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album6 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album6 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album6 .buttons .btn1 {
@@ -884,12 +1096,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album7 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album7 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album7 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album7 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album7 .buttons .btn1 {
@@ -988,12 +1235,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album8 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album8 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album8 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album8 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album8 .buttons .btn1 {
@@ -1092,12 +1374,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album9 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album9 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album9 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album9 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album9 .buttons .btn1 {
@@ -1196,12 +1513,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album10 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album10 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album10 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album10 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album10 .buttons .btn1 {
@@ -1300,12 +1652,47 @@ body {
           transform: translateY(100%);
 }
 
+.containerP .container2 .music-grid .album11 .buttons::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 60%;
+  border-right: solid 3px #11111170;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+
+.containerP .container2 .music-grid .album11 .buttons::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color);
+  -webkit-clip-path: circle(var(--album_1));
+          clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
 .containerP .container2 .music-grid .album11 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container2 .music-grid .album11 .buttons a:hover {
+  color: #11111199;
 }
 
 .containerP .container2 .music-grid .album11 .buttons .btn1 {
