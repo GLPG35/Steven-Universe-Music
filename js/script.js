@@ -69,3 +69,15 @@ $('.al').mouseenter(function() {
         }
     });
 });
+
+$(document).scroll(function() {
+    let scroll = $(document).scrollTop();
+
+    if (scroll > 150) {
+        $('.floatingchat-container-wrap').removeClass('show').addClass('hide');
+        $('.floatingchat-container-wrap-mobi').removeClass('show').addClass('hide');
+    } else {
+        $('.floatingchat-container-wrap').removeClass('hide').addClass('show');
+        $('.floatingchat-container-wrap-mobi').removeClass('hide').addClass('show');
+    }
+});
