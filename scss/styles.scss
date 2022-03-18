@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes logoSU {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(24%);
+    }
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(1em);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0.5em;
+
+    &-thumb {
+        background-color: #8481c6;
+        border-radius: 15px;
+        transition: 0.2s ease-out;
+
+        &:hover {
+            background-color: #595696;
+        }
+    }
+
+    &-track {
+        background-color: #f0f0f0;
+    }
+}
+
+body {
+    background-color: #1c103d;
+}
+
+.containerP {
+    width: 100%;
+    height: max-content;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    .container1 {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(to top, #1c103dff, #ffffff00);
+
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        .sulogo {
+            width: 50%;
+            height: auto;
+            position: absolute;
+            z-index: 10;
+
+            .SUMLogo {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        a {
+            position: absolute;
+            bottom: 5em;
+            animation: arrow 2s ease-in-out infinite forwards;
+
+            .fa-chevron-down {
+                font-size: 2.5em;
+                color: #f0f0f0;
+                transition: 0.2s ease-out;
+    
+                &:hover {
+                    color: #8481c6;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .container2 {
+        width: 100%;
+        height: max-content;
+        padding: 2em 1em;
+
+        h2 {
+            width: 100%;
+            height: max-content;
+            padding-bottom: 1.5em;
+            font-size: clamp(2em, calc(-0.875em + 8.333vw), 4em);
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 800;
+            color: #f0f0f0;
+        }
+
+        .music-grid {
+            min-height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+            grid-auto-rows: max-content;
+            gap: 2em;
+
+            @for $i from 1 through 11 {
+                .album#{$i} {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 25px;
+
+                    &:hover {
+                        .boxImage {
+                            filter: brightness(0.5);
+                        }
+
+                        .buttons {
+                            transform: translateY(0%);
+                        }
+                    }
+
+                    .boxImage {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: center;
+                        z-index: -1;
+                        position: absolute;
+                        transition: 0.2s ease-out;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 25px;
+                        }
+                    }
+
+                    .buttons {
+                        height: 20%;
+                        width: 100%;
+                        border-radius: 0 0 25px 25px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #3e3a8b;
+                        position: absolute;
+                        z-index: 1;
+                        bottom: 0;
+                        transition: 0.3s ease-out;
+                        transform: translateY(100%);
+
+                        a {
+                            text-decoration: none;
+                            color: #f0f0f0;
+                            font-family: 'Open Sans', sans-serif;
+                            font-weight: 600;
+                            font-size: 1.2em;
+                        }
+
+                        .btn {
+                            &1 {
+                                width: 50%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+
+                            &2 {
+                                width: 50%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.st7 {
+    animation: logoSU 2s linear infinite forwards;
+}
