@@ -81,3 +81,7 @@ $(document).scroll(function() {
         $('.floatingchat-container-wrap-mobi').removeClass('hide').addClass('show');
     }
 });
+
+$(document).ready(function() {
+    $('.floatingchat-container-mobi').contents().find('span').remove();
+});
