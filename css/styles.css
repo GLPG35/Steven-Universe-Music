@@ -3,6 +3,7 @@
   scroll-behavior: smooth;
   --album_1: 0% at 75% 50%;
   --color: #823a8b;
+  --grid: 5;
 }
 
 *,
@@ -1731,10 +1732,6 @@ body {
 .floatingchat-container-wrap, .floatingchat-container-wrap-mobi {
   -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
-}
-
-.floatingchat-container-wrap .floatingchat-donate-button:hover, .floatingchat-container-wrap-mobi .floatingchat-donate-button:hover {
-  background-color: #f0f0f0;
 }
 
 .hide {
