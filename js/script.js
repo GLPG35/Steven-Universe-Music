@@ -83,8 +83,19 @@ $(document).scroll(function() {
     }
 });
 
+let audio_track = new Audio("music/I'm Still Here.opus");
+
 $(document).click(function() {
-    $('.audio')[0].play();
+    audio_track.play();
+});
+
+$(audio_track).on('timeupdate', function() {
+    let buffer = .1;
+    
+    if (this.currentTime > this.duration - buffer) {
+        this.currentTime = 0;
+        audio_track.play();
+    }
 });
 
 $(window).resize(function() {
