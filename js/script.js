@@ -87,6 +87,42 @@ $(document).click(function() {
     $('.audio')[0].play();
 });
 
+$(window).resize(function() {
+    let gridCS = window.getComputedStyle(grid);
+
+    let gridCC = gridCS.getPropertyValue('grid-template-columns').split(' ').length;
+
+    switch (gridCC) {
+        case 5:
+            $('.album10, .album9').removeAttr('style');
+            $('.album11').css({
+                'grid-column': '3 / 4'
+            });
+            break;
+
+        case 4:
+            $('.album10, .album9').removeAttr('style');
+            $('.album11, .album10, .album9').css({
+                'transform': 'translateX(50%)'
+            });
+            break;
+        
+        case 3:
+            $('.album10, .album9').removeAttr('style');
+            $('.album11, .album10').css({
+                'transform': 'translateX(50%)'
+            });
+            break;
+
+        case 2:
+            $('.album10, .album9').removeAttr('style');
+            $('.album11').css({
+                'transform': 'translateX(50%)'
+            });
+            break;
+    }
+});
+
 $(document).ready(function() {
     $('.floatingchat-container-mobi').contents().find('span').remove();
 
