@@ -251,6 +251,21 @@ body {
             }
         }
     }
+
+    .footer {
+        height: 0.7em;
+        width: 100%;
+        padding: 0.8em;
+        display: flex;
+        align-items: center;
+        background-color: #00000033;
+        
+        span {
+            font-family: 'Open Sans', sans-serif;
+            color: #f0f0f0;
+            font-size: 0.7em;
+        }
+    } 
 }
 
 .st7 {

@@ -131,6 +131,10 @@ $(window).resize(function() {
                 'transform': 'translateX(50%)'
             });
             break;
+        
+        case 1:
+            $('.album11, .album9, .album10').removeAttr('style');
+            break;
     }
 });
 
@@ -166,4 +170,6 @@ $(document).ready(function() {
             });
             break;
     }
+
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`)
 });
