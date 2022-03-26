@@ -39,15 +39,17 @@ particlesJS (
     }
 );
 
-let isActive = 0;
-let cooldown = 0;
-
-$(document).ready(function() {
+$(window).on('load', function() {
     $('.spinner').css('opacity', 0);
     setTimeout(function() {
         $('.spinner').remove();
     }, 1000);
+});
 
+let isActive = 0;
+let cooldown = 0;
+
+$(document).ready(function() {
     gsap.to('.star', 1, {
         x: '5.5%',
         y: '3.2%',
