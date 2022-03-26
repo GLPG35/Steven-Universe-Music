@@ -39,6 +39,37 @@ particlesJS (
     }
 );
 
+let isActive = 0;
+
+$('.fa-bars').mouseenter(function() {
+    $('.star').css('transform', 'scale(0.12) translate(-87%, -185%)');
+}).mouseleave(function() {
+    if (isActive == 0) {
+        $('.star').removeAttr('style');
+    }
+});
+
+$('.fa-bars').click(function() {
+    isActive = 1;
+    $(window).scrollTop(0);
+    $('body').css('overflow', 'hidden');
+    $('.fa-bars').css('pointer-events', 'none');
+    $('.fa-times').css('pointer-events', 'all');
+    $('.star').css('transform', 'scale(10) translate(-87%, -185%)');
+    $('.fa-bars').addClass('active');
+    $('.fa-times').addClass('active');
+});
+
+$('.fa-times').click(function() {
+    isActive = 0;
+    $('body').removeAttr('style');
+    $('.fa-times').css('pointer-events', 'none');
+    $('.fa-bars').css('pointer-events', 'all');
+    $('.star').removeAttr('style');
+    $('.fa-bars').removeClass('active');
+    $('.fa-times').removeClass('active');
+});
+
 $('.al').mouseenter(function() {
     let albumName = this.className;
     let first = albumName.split(' ');
@@ -172,4 +203,10 @@ $(document).ready(function() {
     }
 
     $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`)
+});
+
+let url = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+
+$.getScript(url, function() {
+    $('.floatingchat-container-wrap').attr('style', 'z-index: 19 !important');
 });
