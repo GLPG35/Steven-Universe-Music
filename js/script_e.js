@@ -42,6 +42,34 @@ particlesJS (
 let isActive = 0;
 let cooldown = 0;
 
+var current_player = "a";
+var player_a = document.createElement("audio");
+var player_b = document.createElement("audio");
+
+player_a.src = "music/Night Drive.opus";
+player_b.src = player_a.src;
+
+function loopIt(){
+    var player = null;
+
+    if(current_player == "a"){
+        player = player_b;
+        current_player = "b";
+    }
+    else{
+        player = player_a;
+        current_player = "a";
+    }
+
+    player.play();
+
+    setTimeout(loopIt, 10679);
+}
+
+$(document).click(function() {
+    loopIt();
+});
+
 $(document).ready(function() {
     $('.spinner').css('opacity', 0);
     setTimeout(function() {
@@ -195,7 +223,7 @@ let episodeContainer;
 
 function rwEpisodes(season, number, grid) {
     $.get(`./js/${number}.txt`, function(data) {
-        let lines = data.split('\n');
+        let lines = data.split('\r\n');
         let countE = 1;
     
         lines.forEach(function(n) {

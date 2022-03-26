@@ -156,18 +156,36 @@ $(document).scroll(function() {
     }
 });
 
-let audio_track = new Audio("music/I'm Still Here.opus");
+let musicClick = 0;
+
+var current_player = "a";
+var player_a = document.createElement("audio");
+var player_b = document.createElement("audio");
+
+player_a.src = "music/I'm Still Here.opus";
+player_b.src = player_a.src;
+
+function loopIt(){
+    var player = null;
+
+    if(current_player == "a"){
+        player = player_b;
+        current_player = "b";
+    }
+    else{
+        player = player_a;
+        current_player = "a";
+    }
+
+    player.play();
+
+    setTimeout(loopIt, 70280);
+}
 
 $(document).click(function() {
-    audio_track.play();
-});
-
-$(audio_track).on('timeupdate', function() {
-    let buffer = .1;
-    
-    if (this.currentTime > this.duration - buffer) {
-        this.currentTime = 0;
-        audio_track.play();
+    if (musicClick == 0) {
+        loopIt();
+        musicClick = 1;
     }
 });
 
