@@ -143,7 +143,7 @@ $('.al').mouseenter(function() {
     });
 });
 
-$(document).scroll(function() {
+/*$(document).scroll(function() {
     let scroll = $(document).scrollTop();
 
     if (scroll > 150) {
@@ -154,7 +154,7 @@ $(document).scroll(function() {
         $('.floatingchat-container-wrap').removeClass('hide').addClass('show');
         $('.floatingchat-container-wrap-mobi').removeClass('hide').addClass('show');
     }
-});
+});*/
 
 let musicClick = 0;
 
@@ -230,7 +230,7 @@ $(window).resize(function() {
 });
 
 $(document).ready(function() {
-    $('.floatingchat-container-mobi').contents().find('span').remove();
+    //$('.floatingchat-container-mobi').contents().find('span').remove();
 
     let gridCS = window.getComputedStyle(grid);
 
@@ -262,11 +262,11 @@ $(document).ready(function() {
             break;
     }
 
-    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`)
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 });
 
-let url = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
+/*let url = 'https://storage.ko-fi.com/cdn/scripts/overlay-widget.js';
 
 $.getScript(url, function() {
     $('.floatingchat-container-wrap').attr('style', 'z-index: 19 !important');
-});
+});*/

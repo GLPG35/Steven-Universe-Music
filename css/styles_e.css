@@ -7,6 +7,124 @@
   --primary-clr: #f0f0f0;
 }
 
+@-webkit-keyframes logoSU {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(24%);
+            transform: translateX(24%);
+  }
+}
+
+@keyframes logoSU {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(24%);
+            transform: translateX(24%);
+  }
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+@-webkit-keyframes credits1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes credits1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes credits2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes credits2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -49,6 +167,8 @@
 .header {
   height: 6em;
   width: 100%;
+  top: 0;
+  left: 0;
   position: absolute;
 }
 
@@ -151,88 +271,6 @@
   --hover-clr: #62158f;
   --bg-clr: #fe74bc;
   --primary-clr: #2e1864;
-}
-
-@-webkit-keyframes logoSU {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(24%);
-            transform: translateX(24%);
-  }
-}
-
-@keyframes logoSU {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(24%);
-            transform: translateX(24%);
-  }
-}
-
-@-webkit-keyframes arrow {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(1em);
-            transform: translateY(1em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes arrow {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(1em);
-            transform: translateY(1em);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-  50% {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-  100% {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
-  50% {
-    -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-  100% {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
-  }
 }
 
 body {
@@ -1853,6 +1891,25 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
+}
+
+.containerP .footer {
+  height: 0.7em;
+  width: 100%;
+  padding: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #150730;
+}
+
+.containerP .footer span {
+  font-family: 'Open Sans', sans-serif;
+  color: #f0f0f0;
+  font-size: 0.7em;
 }
 
 .st4 {

@@ -86,6 +86,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 });
 
 $('.fa-bars').mouseenter(function() {
@@ -127,7 +129,9 @@ $('.fa-bars').click(function() {
 });
 
 $('.fa-times').click(function() {
-    $('.bg-img').replaceWith(`<video class="pinkV" src="images/Temple Pink (Loop).mp4" loop autoplay muted></video>`);
+    $('.bg-img').replaceWith(`<video class="pinkV" loop autoplay muted>
+        <source src="images/Temple Pink (Loop).mp4" type="video/mp4">
+    </video>`);
     isActive = 0;
     cooldown = 1;
     $('body').removeAttr('style');
@@ -211,7 +215,9 @@ $(document).scroll(function() {
     if (scroll > 300) {
         $('.pinkV').replaceWith(`<img class="bg-img" src="images/temple_pink.webp" />`);
     } else {
-        $('.bg-img').replaceWith(`<video class="pinkV" src="images/Temple Pink (Loop).mp4" loop autoplay muted></video>`);
+        $('.bg-img').replaceWith(`<video class="pinkV" loop autoplay muted>
+            <source src="images/Temple Pink (Loop).mp4" type="video/mp4">
+        </video>`);
     }
 });
 
@@ -227,7 +233,7 @@ let episodeContainer;
 
 function rwEpisodes(season, number, grid) {
     $.get(`./js/${number}.txt`, function(data) {
-        let lines = data.split('\r\n');
+        let lines = data.split('\n');
         let countE = 1;
     
         lines.forEach(function(n) {
