@@ -42,12 +42,8 @@
 }
 
 .menuClip .star {
-  -webkit-transform: scale(0) translate(-87%, -180%);
-          transform: scale(0) translate(-87%, -180%);
-  -webkit-transform-origin: 2.25em 2.3em;
-          transform-origin: 2.25em 2.3em;
-  -webkit-transition: 0.5s ease-out;
-  transition: 0.5s ease-out;
+  -webkit-transform: scale(0) translate(1%, 0);
+          transform: scale(0) translate(1%, 0);
 }
 
 .header {
@@ -209,8 +205,64 @@
   }
 }
 
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+  50% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
+  }
+}
+
 body {
   background-color: #ffbbf9;
+}
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  background-color: #fe74bc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+}
+
+.spinner .spinIcon {
+  width: auto;
+  height: 20%;
+  -webkit-animation: spin 3s ease-out infinite forwards;
+          animation: spin 3s ease-out infinite forwards;
 }
 
 .containerP {
