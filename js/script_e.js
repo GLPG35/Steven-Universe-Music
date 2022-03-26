@@ -153,7 +153,7 @@ let episodeContainer;
 
 function rwEpisodes(season, number, grid) {
     $.get(`./js/${number}.txt`, function(data) {
-        let lines = data.split('\r\n');
+        let lines = data.split('\n');
         let countE = 1;
     
         lines.forEach(function(n) {
