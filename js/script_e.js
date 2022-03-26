@@ -41,6 +41,7 @@ particlesJS (
 
 let isActive = 0;
 let cooldown = 0;
+let musicClick = 0;
 
 var current_player = "a";
 var player_a = document.createElement("audio");
@@ -67,7 +68,10 @@ function loopIt(){
 }
 
 $(document).click(function() {
-    loopIt();
+    if (musicClick == 0) {
+        loopIt();
+        musicClick = 1;
+    }
 });
 
 $(document).ready(function() {
