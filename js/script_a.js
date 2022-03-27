@@ -61,6 +61,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+    
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
     $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
