@@ -5,7 +5,18 @@ $(window).on('load', function() {
     }, 1000);
 });
 
+let verify = 0;
+
 function aboutAnim() {
+    if (verify == 0) {
+        $('#igfd_5').css({
+            'opacity': 1,
+            'visibility': 'visible'
+        });
+
+        verify = 1;
+    }
+    
     setTimeout(function() {
         $('#igfd_5').css({
             'opacity': 0,
