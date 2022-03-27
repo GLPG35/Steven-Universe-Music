@@ -5,18 +5,7 @@ $(window).on('load', function() {
     }, 1000);
 });
 
-let verify = 0;
-
 function aboutAnim() {
-    if (verify == 0) {
-        $('#igfd_5').css({
-            'opacity': 1,
-            'visibility': 'visible'
-        });
-
-        verify = 1;
-    }
-    
     setTimeout(function() {
         $('#igfd_5').css({
             'opacity': 0,
@@ -81,10 +70,6 @@ $(document).ready(function() {
 
     window.setInterval(aboutAnim, 20000);
 });
-
-$('svg').on('load', function() {
-    $('#igfd_5').css('opacity', 0);
-})
 
 $('.fa-bars').mouseenter(function() {
     if (cooldown == 0) {
