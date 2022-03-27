@@ -273,6 +273,7 @@
 
 body {
   background-color: #1c103d;
+  overflow-x: hidden;
 }
 
 .spinner {
