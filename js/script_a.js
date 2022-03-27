@@ -7,7 +7,7 @@ $(window).on('load', function() {
 
 function aboutAnim() {
     setTimeout(function() {
-        $('#igfd_5 > *').css({
+        $('#igfd_5').css({
             'opacity': 0,
             'visibility': 'hidden'
         });
@@ -41,7 +41,7 @@ function aboutAnim() {
                         'opacity': 0,
                         'visibility': 'hidden'
                     });
-                    $('#igfd_5 > *').css({
+                    $('#igfd_5').css({
                         'opacity': 1,
                         'visibility': 'visible'
                     });
@@ -49,8 +49,6 @@ function aboutAnim() {
             }, 5000);
         }, 5000);
     }, 5000);
-
-    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 }
 
 let isActive = 0;
@@ -63,6 +61,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
     aboutAnim();
 
