@@ -54,6 +54,39 @@ function aboutAnim() {
 let isActive = 0;
 let cooldown = 0;
 
+let musicClick = 0;
+
+var current_player = "a";
+var player_a = document.createElement("audio");
+var player_b = document.createElement("audio");
+
+player_a.src = "music/The Answer.opus";
+player_b.src = player_a.src;
+
+function loopIt(){
+    var player = null;
+
+    if(current_player == "a"){
+        player = player_b;
+        current_player = "b";
+    }
+    else{
+        player = player_a;
+        current_player = "a";
+    }
+
+    player.play();
+
+    setTimeout(loopIt, 60778);
+}
+
+$(document).click(function() {
+    if (musicClick == 0) {
+        loopIt();
+        musicClick = 1;
+    }
+});
+
 $(document).ready(function() {
     gsap.to('.star', 1, {
         x: '5.5%',
@@ -61,8 +94,6 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
-    
-    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
     $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
