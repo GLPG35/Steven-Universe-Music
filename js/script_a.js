@@ -49,8 +49,6 @@ function aboutAnim() {
             }, 5000);
         }, 5000);
     }, 5000);
-
-    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 }
 
 let isActive = 0;
@@ -63,6 +61,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+    
+    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 
     aboutAnim();
 
