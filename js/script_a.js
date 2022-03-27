@@ -7,7 +7,7 @@ $(window).on('load', function() {
 
 function aboutAnim() {
     setTimeout(function() {
-        $('#igfd_5 > *').css({
+        $('#igfd_5').css({
             'opacity': 0,
             'visibility': 'hidden'
         });
