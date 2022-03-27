@@ -71,10 +71,6 @@ $(document).ready(function() {
     window.setInterval(aboutAnim, 20000);
 });
 
-$('svg').on('load', function() {
-    $('#igfd_5').css('opacity', 0);
-})
-
 $('.fa-bars').mouseenter(function() {
     if (cooldown == 0) {
         gsap.to('.star', 0.5, {
