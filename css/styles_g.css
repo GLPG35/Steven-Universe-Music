@@ -499,4 +499,10 @@
   -webkit-animation: logoSU 2s linear infinite forwards;
           animation: logoSU 2s linear infinite forwards;
 }
+
+@media (max-width: 700px) {
+  .containerP .container1 .suGLogo {
+    width: 80%;
+  }
+}
 /*# sourceMappingURL=styles_g.css.map */
