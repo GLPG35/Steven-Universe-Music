@@ -11,40 +11,51 @@ function aboutAnim() {
             'opacity': 0,
             'visibility': 'hidden'
         });
-        $('#igfrl_9').css({
+        $('#igfrl_11').css({
             'opacity': 1,
             'visibility': 'visible'
         });
         
         setTimeout(function() {
-            $('#igfrl_9').css({
+            $('#igfrl_11').css({
                 'opacity': 0,
                 'visibility': 'hidden'
             });
-            $('#gmc_7').css({
+            $('#ds_7').css({
                 'opacity': 1,
                 'visibility': 'visible'
             });
 
             setTimeout(function() {
-                $('#gmc_7').css({
+                $('#ds_7').css({
                     'opacity': 0,
                     'visibility': 'hidden'
                 });
-                $('#githubp_11').css({
+                $('#gmc_9').css({
                     'opacity': 1,
                     'visibility': 'visible'
                 });
 
                 setTimeout(function() {
-                    $('#githubp_11').css({
+                    $('#gmc_9').css({
                         'opacity': 0,
                         'visibility': 'hidden'
                     });
-                    $('#igfd_5').css({
+                    $('#githubp_13').css({
                         'opacity': 1,
                         'visibility': 'visible'
                     });
+
+                    setTimeout(function() {
+                        $('#githubp_13').css({
+                            'opacity': 0,
+                            'visibility': 'hidden'
+                        });
+                        $('#igfd_5').css({
+                            'opacity': 1,
+                            'visibility': 'visible'
+                        });
+                    }, 5000);
                 }, 5000);
             }, 5000);
         }, 5000);
@@ -99,7 +110,7 @@ $(document).ready(function() {
 
     aboutAnim();
 
-    window.setInterval(aboutAnim, 20000);
+    window.setInterval(aboutAnim, 25000);
 });
 
 $('.fa-bars').mouseenter(function() {

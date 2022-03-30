@@ -1,47 +1,12 @@
-let isActive = 0;
-let cooldown = 0;
-
-function creditsAnim() {
-    setTimeout(function() {
-        $('#SugRocksMusic_9').css({
-            'opacity': 0,
-            'visibility': 'hidden'
-        });
-        $('#PhizzyLink_5').css({
-            'opacity': 1,
-            'visibility': 'visible'
-        });
-        
-        setTimeout(function() {
-            $('#PhizzyLink_5').css({
-                'opacity': 0,
-                'visibility': 'hidden'
-            });
-            $('#StevenWiki_7').css({
-                'opacity': 1,
-                'visibility': 'visible'
-            });
-
-            setTimeout(function() {
-                $('#StevenWiki_7').css({
-                    'opacity': 0,
-                    'visibility': 'hidden'
-                });
-                $('#SugRocksMusic_9').css({
-                    'opacity': 1,
-                    'visibility': 'visible'
-                });
-            }, 5000);
-        }, 5000);
-    }, 5000);
-}
-
 $(window).on('load', function() {
     $('.spinner').css('opacity', 0);
     setTimeout(function() {
         $('.spinner').remove();
     }, 1000);
 });
+
+let isActive = 0;
+let cooldown = 0;
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -52,43 +17,6 @@ $(document).ready(function() {
     });
 
     $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
-
-    creditsAnim();
-
-    window.setInterval(creditsAnim, 15000);
-});
-
-let musicClick = 0;
-
-var current_player = "a";
-var player_a = document.createElement("audio");
-var player_b = document.createElement("audio");
-
-player_a.src = "music/No Gem Wars at the Table.opus";
-player_b.src = player_a.src;
-
-function loopIt(){
-    var player = null;
-
-    if(current_player == "a"){
-        player = player_b;
-        current_player = "b";
-    }
-    else{
-        player = player_a;
-        current_player = "a";
-    }
-
-    player.play();
-
-    setTimeout(loopIt, 93510);
-}
-
-$(document).click(function() {
-    if (musicClick == 0) {
-        loopIt();
-        musicClick = 1;
-    }
 });
 
 $('.fa-bars').mouseenter(function() {
@@ -146,3 +74,40 @@ $('.fa-times').click(function() {
         cooldown = 0;
     }, 1500);
 });
+
+let characterList = [];
+
+$.get('./js/characters.txt', function(data) {
+    let lines = data.split('\n');
+
+    lines.forEach(function(n) {
+        let split = n.split(', ');
+        let element = {};
+
+        element.character = split[0];
+        element.description = split[1];
+        element.icon = split[2];
+
+        characterList.push(element);        
+    });
+
+    characterList.forEach(function(n) {
+        let classN = n.character.toLowerCase();
+        
+        let charDiv = `<div class="${classN}">
+            <div class="icon">
+                <img src="${n.icon}" />
+            </div>
+            <div class="tdWrapper">
+                <div class="title">
+                    <h3>${n.character}</h3>
+                </div>
+                <div class="desc">
+                    <span>${n.description}</span>
+                </div>
+            </div>
+        </div>`;
+
+        $('.char-scroll').append(charDiv);
+    });
+}, 'text');

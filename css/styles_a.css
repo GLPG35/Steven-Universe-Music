@@ -488,16 +488,16 @@ body {
   visibility: visible;
 }
 
-#ig_x5F_d_6 a:hover path, #mail_8 a:hover path, #git_12 a:hover path, #ig_x5F_p_1__10 a:hover path {
+#ig_x5F_d_6 a:hover path, #mail_10 a:hover path, #git_14 a:hover path, #ig_x5F_p_1__12 a:hover path, #discord_8 a:hover path {
   fill: #791118;
 }
 
-#ig_x5F_d_6 a path, #mail_8 a path, #git_12 a path, #ig_x5F_p_1__10 a path {
+#ig_x5F_d_6 a path, #mail_10 a path, #git_14 a path, #ig_x5F_p_1__12 a path, #discord_8 a path {
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
 
-#igfrl_9, #gmc_7, #githubp_11 {
+#igfrl_11, #gmc_9, #githubp_13, #ds_7 {
   display: block;
   visibility: hidden;
   opacity: 0;

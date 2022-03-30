@@ -1,0 +1,7 @@
+Steven, ..., images/icon.png
+Garnet, ..., images/garnetIcon.png
+Amethyst, ..., images/amethystIcon.png
+Pearl, ..., images/pearlIcon.png
+Lapislazuli, ..., images/lapisIcon.png
+Peridot, ..., images/peridotIcon.png
+Jasper, ..., images/jasperIcon.png

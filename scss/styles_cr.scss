@@ -88,20 +88,18 @@ body {
     } 
 }
 
-.cr1 {
+#PhizzyLink_5, #StevenWiki_7 {
     opacity: 0;
+    visibility: hidden;
 
 }
 
-.cr2 {
-    opacity: 0;
-}
-
-.cr3 {
+#SugRocksMusic_9 {
     opacity: 1;
+    visibility: visible;
 }
 
-.cr1, .cr2, .cr3 {
+#SugRocksMusic_9, #PhizzyLink_5, #StevenWiki_7 {
     transition: 0.5s ease-out;
 }
 

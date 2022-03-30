@@ -265,12 +265,31 @@
 }
 
 :root {
-  --bg-clr: #9090c9;
-  --hover-clr: #0367a0;
+  scroll-behavior: smooth;
+  --bg-clr: #7659d7;
+  --hover-clr: #562181;
 }
 
-body {
-  overflow-x: hidden;
+@-webkit-keyframes logoSU2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(34%);
+            transform: translateX(34%);
+  }
+}
+
+@keyframes logoSU2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(34%);
+            transform: translateX(34%);
+  }
 }
 
 .spinner {
@@ -278,7 +297,7 @@ body {
   height: 100%;
   position: fixed;
   z-index: 100;
-  background-color: #9090c9;
+  background-color: #7659d7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,87 +346,127 @@ body {
           flex-direction: column;
 }
 
-.containerP .container1 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
 .containerP .container1 video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
   width: 100%;
   height: 100%;
-  position: absolute;
-  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.containerP .container1 .suCrLogo {
+.containerP .container1 .suChLogo {
   width: 50%;
   height: auto;
   position: absolute;
   z-index: 10;
-  -webkit-transform: translate(40%, -10%);
-          transform: translate(40%, -10%);
+  -webkit-transform: translate(-35%, 0);
+          transform: translate(-35%, 0);
 }
 
-.containerP .footer {
-  height: 0.7em;
+.containerP .container1 a {
+  position: absolute;
+  bottom: 5em;
+  -webkit-animation: arrow 2s ease-in-out infinite forwards;
+          animation: arrow 2s ease-in-out infinite forwards;
+}
+
+.containerP .container1 a .fa-chevron-down {
+  font-size: 2.5em;
+  color: #f0f0f0;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.containerP .container1 a .fa-chevron-down:hover {
+  color: #7659d7;
+  cursor: pointer;
+}
+
+.containerP .container2 {
   width: 100%;
-  padding: 0.8em;
+  min-height: 100vh;
+  padding: 2em 1em;
+  background-color: #232856;
+}
+
+.containerP .container2 h2 {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 1.5em;
+  font-size: clamp(2em, calc(-0.875em + 8.333vw), 4em);
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  color: #f0f0f0;
+}
+
+.containerP .container2 .char-scroll {
+  width: 100%;
+  height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.containerP .container2 .char-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.containerP .container2 .char-scroll div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: transparent;
-  position: absolute;
-  bottom: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
-.containerP .footer span {
+.containerP .container2 .char-scroll div .icon {
+  width: 20%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.containerP .container2 .char-scroll div .icon img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.containerP .container2 .char-scroll div .tdWrapper {
+  width: 70%;
+  height: 70%;
   font-family: 'Open Sans', sans-serif;
   color: #f0f0f0;
-  font-size: 0.7em;
 }
 
-#PhizzyLink_5, #StevenWiki_7 {
-  opacity: 0;
-  visibility: hidden;
+.containerP .container2 .char-scroll div .tdWrapper .title {
+  width: 100%;
+  height: 20%;
+  font-size: 1.5em;
 }
 
-#SugRocksMusic_9 {
-  opacity: 1;
-  visibility: visible;
+.containerP .container2 .char-scroll div .tdWrapper .desc {
+  width: 100%;
+  height: 80%;
+  font-weight: 600;
+  font-size: 1.2em;
 }
 
-#SugRocksMusic_9, #PhizzyLink_5, #StevenWiki_7 {
-  -webkit-transition: 0.5s ease-out;
-  transition: 0.5s ease-out;
+.st3 path {
+  -webkit-animation: logoSU2 2s linear infinite forwards;
+          animation: logoSU2 2s linear infinite forwards;
 }
-
-.st4 {
-  -webkit-animation: logoSU 2s linear infinite forwards;
-          animation: logoSU 2s linear infinite forwards;
-}
-
-@media (max-width: 1000px) {
-  .containerP .suCrLogo {
-    width: 80% !important;
-    -webkit-transform: translate(0, 0) !important;
-            transform: translate(0, 0) !important;
-  }
-  .containerP video {
-    -o-object-position: -10em !important;
-       object-position: -10em !important;
-  }
-}
-/*# sourceMappingURL=styles_cr.css.map */
+/*# sourceMappingURL=styles_ch.css.map */
