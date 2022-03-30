@@ -1,5 +1,5 @@
 $(window).on('load', function() {
-    $('.spinner').css('opacity', 0);
+    $('.spinner').fadeOut(1000);
     setTimeout(function() {
         $('.spinner').remove();
     }, 1000);

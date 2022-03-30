@@ -26,7 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 1s ease-out;
 
     .spinIcon {
         width: auto;
@@ -92,6 +91,7 @@
             width: 100%;
             height: max-content;
             padding-bottom: 1.5em;
+            padding-top: 0.5em;
             font-size: clamp(2em, calc(-0.875em + 8.333vw), 4em);
             text-align: center;
             font-family: 'Open Sans', sans-serif;
