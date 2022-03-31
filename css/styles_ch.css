@@ -616,7 +616,9 @@
     -webkit-box-shadow: none;
             box-shadow: none;
     width: 80%;
-    height: 10%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
