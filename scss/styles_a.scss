@@ -10,6 +10,16 @@
     --primary-clr: #d0424b;
 }
 
+@keyframes logoSU2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
 body {
     overflow-x: hidden;
 }
@@ -165,7 +175,7 @@ body {
 }
 
 .st3 path {
-    animation: logoSU 2s linear infinite forwards;
+    animation: logoSU2 2s linear infinite forwards;
 }
 
 #igfd_5 {

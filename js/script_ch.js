@@ -75,6 +75,39 @@ $('.fa-times').click(function() {
     }, 1500);
 });
 
+let musicClick = 0;
+
+var current_player = "a";
+var player_a = document.createElement("audio");
+var player_b = document.createElement("audio");
+
+player_a.src = "music/luv u.opus";
+player_b.src = player_a.src;
+
+function loopIt(){
+    var player = null;
+
+    if(current_player == "a"){
+        player = player_b;
+        current_player = "b";
+    }
+    else{
+        player = player_a;
+        current_player = "a";
+    }
+
+    player.play();
+
+    setTimeout(loopIt, 64025);
+}
+
+$(document).click(function() {
+    if (musicClick == 0) {
+        loopIt();
+        musicClick = 1;
+    }
+});
+
 let characterList = [];
 
 $.get('./js/characters.txt', function(data) {

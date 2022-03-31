@@ -392,6 +392,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #7659d7;
+  -webkit-box-shadow: 0 20px 20px -10px #10101070 inset;
+          box-shadow: 0 20px 20px -10px #10101070 inset;
 }
 
 .containerP .container2 h2 {
@@ -530,6 +532,13 @@
   font-family: 'Dosis', sans-serif;
   font-weight: 800;
   z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .containerP .container2 .char-scroll .char-container .tdWrapper .title {
@@ -543,6 +552,8 @@
   text-transform: uppercase;
   background-color: #f0f0f0;
   border-radius: 100vh;
+  -webkit-box-shadow: 0 10px 0 0 #c0c0c0;
+          box-shadow: 0 10px 0 0 #c0c0c0;
   -webkit-transform: translate(5%, 30%);
           transform: translate(5%, 30%);
   text-align: center;

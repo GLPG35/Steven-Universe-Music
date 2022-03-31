@@ -273,6 +273,28 @@
   --primary-clr: #d0424b;
 }
 
+@-webkit-keyframes logoSU2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+}
+
+@keyframes logoSU2 {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+            transform: translateX(25%);
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -477,8 +499,8 @@ body {
 }
 
 .st3 path {
-  -webkit-animation: logoSU 2s linear infinite forwards;
-          animation: logoSU 2s linear infinite forwards;
+  -webkit-animation: logoSU2 2s linear infinite forwards;
+          animation: logoSU2 2s linear infinite forwards;
 }
 
 #igfd_5 {
