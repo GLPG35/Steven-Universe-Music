@@ -1,4 +1,5 @@
 @import 'header';
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600;700;800&display=swap');
 
 :root {
     scroll-behavior: smooth;
@@ -84,13 +85,14 @@
     .container2 {
         width: 100%;
         min-height: 100vh;
-        padding: 2em 1em;
-        background-color: #232856;
+        padding: 1em 0 0 0;
+        display: flex;
+        flex-direction: column;
+        background-color: #7659d7;
         
         h2 {
             width: 100%;
             height: max-content;
-            padding-bottom: 1.5em;
             padding-top: 0.5em;
             font-size: clamp(2em, calc(-0.875em + 8.333vw), 4em);
             text-align: center;
@@ -101,52 +103,124 @@
 
         .char-scroll {
             width: 100%;
-            height: 70vh;
+            flex-grow: 1;
             display: flex;
             flex-wrap: nowrap;
-            overflow-x: auto;
+            overflow-x: hidden;
+            position: relative;
 
-            &::-webkit-scrollbar {
-                display: none;
+            .btn-scroll {
+                position: absolute;
+                width: 100%;
+                height: 10%;
+                bottom: 0;
+                left: 0;
+                z-index: 30;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5em;
+
+                a {
+                    width: 0.5em;
+                    height: 0.5em;
+                    background-color: transparent;
+                    border-radius: 50vh;
+                    background-color: #f0f0f0;
+                    transition: 0.2s ease-out;
+                    text-decoration: none;
+                    outline: none;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #562181;
+                    }
+
+                    &.active {
+                        width: 1em;
+                        height: 1em;
+                    }
+                }
             }
 
-            div {
+            .char-container {
                 width: 100%;
-                height: 100%;
+                flex-grow: 1;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
                 flex: 0 0 auto;
+                position: relative;
+                transition: 1s ease-in-out;
+
+                .bg {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0.5;
+                    }
+                }
+
+                .gradient {
+                    z-index: 9;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to bottom, #7659d7, #7659d700);
+                    position: absolute;
+                }
 
                 .icon {
                     width: 20%;
                     height: auto;
                     aspect-ratio: 1 / 1;
+                    z-index: 10;
 
                     img {
                         object-fit: cover;
                         width: 100%;
                         height: 100%;
+                        filter: drop-shadow(5px 10px 0 #10101038);
                     }
                 }
 
                 .tdWrapper {
                     width: 70%;
-                    height: 70%;
-                    font-family: 'Open Sans', sans-serif;
-                    color: #f0f0f0;
+                    height: max-content;
+                    font-family: 'Dosis', sans-serif;
+                    font-weight: 800;
+                    z-index: 10;
+                    
 
                     .title {
-                        width: 100%;
+                        width: max-content;
+                        padding: 2% 5%;
                         height: 20%;
-                        font-size: 1.5em;
+                        font-size: 2.2em;
+                        color: #7659d7;
+                        text-transform: uppercase;
+                        background-color: #f0f0f0;
+                        border-radius: 100vh;
+                        transform: translate(5%, 30%);
+                        text-align: center;
+                        z-index: 15;
                     }
     
                     .desc {
                         width: 100%;
                         height: 80%;
-                        font-weight: 600;
-                        font-size: 1.2em;
+                        padding-top: 0.5em;
+                        font-size: 1.5em;
+                        color: #6a86ff;
+                        background-color: #f0f0f0;
+                        border-radius: 100vh;
+                        box-shadow: 0 10px 0 0 #c0c0c0;
+                        padding: 3% 10%;
+                        z-index: 20;
                     }
                 }
             }
@@ -156,4 +230,65 @@
 
 .st3 path {
     animation: logoSU2 2s linear infinite forwards;
+}
+
+@media (max-width: 1100px) {
+    .containerP {
+        .container2 {
+            .char-scroll {
+                .char-container {
+                    .icon {
+                        display: none;
+                    }
+
+                    .tdWrapper {
+                        height: 80%;
+                        width: 90%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        background-color: #f0f0f0;
+                        border-radius: 10vh;
+                        box-shadow: 0 10px 0 0 #c0c0c0, 0 -20px 10px 0 #f0f0f0e3 inset;
+                        overflow-y: scroll;
+                        padding: 2% 5%;
+
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+
+                        .title {
+                            padding: none;
+                            background-color: transparent;
+                            border-radius: none;
+                            box-shadow: none;
+                            width: 80%;
+                            height: 10%;
+                            transform: translate(0, 0);
+                        }
+
+                        .desc {
+                            padding: none;
+                            background-color: transparent;
+                            border-radius: none;
+                            box-shadow: none;
+                            margin-bottom: 1em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .containerP {
+        .container1 {
+            .suChLogo {
+                width: 80%;
+                transform: translate(0, 0);
+            }
+        }
+    }
 }
