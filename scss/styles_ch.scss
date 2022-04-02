@@ -108,6 +108,7 @@
             display: flex;
             flex-wrap: nowrap;
             overflow-x: hidden;
+            overflow-y: hidden;
             position: relative;
 
             .btn-scroll {
@@ -227,6 +228,21 @@
                     }
                 }
             }
+        }
+    }
+
+    .footer {
+        height: 0.7em;
+        width: 100%;
+        padding: 0.8em;
+        display: flex;
+        align-items: center;
+        background-color: #7659d7;
+        
+        span {
+            font-family: 'Open Sans', sans-serif;
+            color: #f0f0f0;
+            font-size: 0.7em;
         }
     }
 }

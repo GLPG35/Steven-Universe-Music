@@ -115,7 +115,6 @@ $('.fa-bars').mouseenter(function() {
 
 $('.fa-bars').click(function() {
     isActive = 1;
-    $(window).scrollTop(0);
     $('body').css('overflow', 'hidden');
     $('.fa-bars').css('pointer-events', 'none');
     $('.fa-times').css('pointer-events', 'all');
@@ -286,7 +285,71 @@ function rwEpisodes(season, number, grid) {
     
             countE++;
         });
-    }, 'text');
+    }, 'text').done(function() {
+        let seasonHeights = {};
+
+        for (let h = 1; h < 7; h++) {
+            seasonHeights['season' + h] = $(`.ls${h}`)[0].scrollHeight;
+        }
+
+        $('input').on('change', function() {
+            let id = $(this)[0].id;
+
+            if ($(this).is(':checked')) {
+                switch (id) {
+                    case 'season1':
+                        $('.ls1').css('height', seasonHeights.season1 + 20);
+                        break;
+
+                    case 'season2':
+                        $('.ls2').css('height', seasonHeights.season2 + 20);
+                        break;
+                    
+                    case 'season3':
+                        $('.ls3').css('height', seasonHeights.season3 + 20);
+                        break;
+
+                    case 'season4':
+                        $('.ls4').css('height', seasonHeights.season4 + 20);
+                        break;
+
+                    case 'season5':
+                        $('.ls5').css('height', seasonHeights.season5 + 20);
+                        break;
+
+                    case 'season6':
+                        $('.ls6').css('height', seasonHeights.season6 + 20);
+                        break;
+                }
+            } else {
+                switch (id) {
+                    case 'season1':
+                        $('.ls1').removeAttr('style');
+                        break;
+
+                    case 'season2':
+                        $('.ls2').removeAttr('style');
+                        break;
+                    
+                    case 'season3':
+                        $('.ls3').removeAttr('style');
+                        break;
+
+                    case 'season4':
+                        $('.ls4').removeAttr('style');
+                        break;
+
+                    case 'season5':
+                        $('.ls5').removeAttr('style');
+                        break;
+
+                    case 'season6':
+                        $('.ls6').removeAttr('style');
+                        break;
+                }
+            }
+        });
+    });
 }
 
 for (let j = 1; j < 7; j++) {

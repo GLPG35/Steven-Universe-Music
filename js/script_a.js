@@ -136,7 +136,6 @@ $('.fa-bars').mouseenter(function() {
 
 $('.fa-bars').click(function() {
     isActive = 1;
-    $(window).scrollTop(0);
     $('body').css('overflow', 'hidden');
     $('.fa-bars').css('pointer-events', 'none');
     $('.fa-times').css('pointer-events', 'all');

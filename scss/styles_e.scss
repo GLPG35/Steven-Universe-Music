@@ -117,13 +117,15 @@ body {
             font-family: 'Open Sans', sans-serif;
             font-weight: 700;
             color: #180f2c;
+            padding-top: 0.2em;
+            border-radius: 1.5em 1.5em 0 0;
 
             &.first {
                 background-color: #ffbbf9;
             }
 
             &.second {
-                background-color: #c2f5fc;
+                background-color: #d87eff;
             }
 
             &.third {
@@ -133,7 +135,7 @@ body {
 
             &.fourth {
                 color: #f0f0f0;
-                background-color: #ce1c42;
+                background-color: #5214aa;
             }
 
             &.fifth {
@@ -142,34 +144,86 @@ body {
             }
 
             &.sixth {
-                padding-top: 1em;
                 background-color: #ffbbf9;
             }
         }
 
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            height: 4em;
+            transition: height 0.8s ease-in-out;
+
+            &.ls1 {
+                .fa-angle-right {
+                    color: #230c4d;
+                }
+            }
+
+            &.ls3 {
+                background-color: #d87eff;
+            }
+
+            &.ls4 {
+                background-color: #5e1c8a;
+            }
+
+            &.ls5 {
+                background-color: #5214aa;
+            }
+
+            &.ls6 {
+                .fa-angle-right {
+                    color: #230c4d;
+                }
+                background-color: #1e010a;
+            }
+        }
+
+        .fa-angle-right {
+            position: absolute;
+            top: 1.2em;
+            right: 2em;
+            color: #f0f0f0;
+            font-size: 1.2em;
+            z-index: 10;
+            transition: 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        input[type="checkbox"]:checked + label > .fa-angle-right {
+            transform: rotate(90deg);
+        }
+
         .episodes {
             &1-grid {
-                background: linear-gradient(to bottom, #ffbbf9, #c2f5fc);
+                background-color: #ffbbf9;
             }
 
             &2-grid {
-                background: linear-gradient(to bottom, #c2f5fc, #5e1c8a);
+                background-color: #d87eff;
             }
 
             &3-grid {
-                background: linear-gradient(to bottom, #5e1c8a, #ce1c42);
+                background-color: #5e1c8a;
             }
 
             &4-grid {
-                background: linear-gradient(to bottom, #ce1c42, #230c4d);
+                background-color: #5214aa;
             }
 
             &5-grid {
-                background: linear-gradient(to bottom, #230c4d, #ffbbf9);
+                background-color: #230c4d;
             }
 
             &6-grid {
-                background: linear-gradient(to bottom, #ffbbf9, #150730);
+                background-color: #ffbbf9;
             }
         }
 
