@@ -121,7 +121,7 @@ $('.fa-bars').click(function() {
     gsap.to('.star', 1, {
         transformOrigin: '50% 50%',
         rotation: 90,
-        scale: 10,
+        scale: 15,
         ease: Power2.easeOut
     });
     $('.fa-bars').addClass('active');
@@ -229,6 +229,7 @@ let season4 = [];
 let season5 = [];
 let movie = [];
 let season6 = [];
+let seasonHeights = {};
 
 let episodeContainer;
 
@@ -286,69 +287,9 @@ function rwEpisodes(season, number, grid) {
             countE++;
         });
     }, 'text').done(function() {
-        let seasonHeights = {};
-
         for (let h = 1; h < 7; h++) {
             seasonHeights['season' + h] = $(`.ls${h}`)[0].scrollHeight;
         }
-
-        $('input').on('change', function() {
-            let id = $(this)[0].id;
-
-            if ($(this).is(':checked')) {
-                switch (id) {
-                    case 'season1':
-                        $('.ls1').css('height', seasonHeights.season1 + 20);
-                        break;
-
-                    case 'season2':
-                        $('.ls2').css('height', seasonHeights.season2 + 20);
-                        break;
-                    
-                    case 'season3':
-                        $('.ls3').css('height', seasonHeights.season3 + 20);
-                        break;
-
-                    case 'season4':
-                        $('.ls4').css('height', seasonHeights.season4 + 20);
-                        break;
-
-                    case 'season5':
-                        $('.ls5').css('height', seasonHeights.season5 + 20);
-                        break;
-
-                    case 'season6':
-                        $('.ls6').css('height', seasonHeights.season6 + 20);
-                        break;
-                }
-            } else {
-                switch (id) {
-                    case 'season1':
-                        $('.ls1').removeAttr('style');
-                        break;
-
-                    case 'season2':
-                        $('.ls2').removeAttr('style');
-                        break;
-                    
-                    case 'season3':
-                        $('.ls3').removeAttr('style');
-                        break;
-
-                    case 'season4':
-                        $('.ls4').removeAttr('style');
-                        break;
-
-                    case 'season5':
-                        $('.ls5').removeAttr('style');
-                        break;
-
-                    case 'season6':
-                        $('.ls6').removeAttr('style');
-                        break;
-                }
-            }
-        });
     });
 }
 
@@ -356,3 +297,69 @@ for (let j = 1; j < 7; j++) {
     let evalvar = eval(`season${j}`)
     rwEpisodes(evalvar, `S0${j}`, `.episodes${j}-grid`);
 }
+
+$('summary').on('click', function() {
+    let class1 = $(this).parent().attr('class').split(' ');
+    let class2 = class1[1];
+
+    console.log(class2);
+    if ($(`.${class2}`).hasClass('open')) {
+        switch (class2) {
+            case 'ls1':
+                $('.ls1').removeAttr('style').removeClass('open');
+                break;
+
+            case 'ls2':
+                $('.ls2').removeAttr('style').removeClass('open');
+                break;
+                
+            case 'ls3':
+                $('.ls3').removeAttr('style').removeClass('open');
+                break;
+
+            case 'ls4':
+                $('.ls4').removeAttr('style').removeClass('open');
+                break;
+
+            case 'ls5':
+                $('.ls5').removeAttr('style').removeClass('open');
+                break;
+
+            case 'ls6':
+                $('.ls6').removeAttr('style').removeClass('open');
+                break;
+        }
+    } else {
+        switch (class2) {
+            case 'ls1':
+                $('.ls1').addClass('open');
+                $('.ls1').css('height', seasonHeights.season1);
+                break;
+
+            case 'ls2':
+                $('.ls2').addClass('open');
+                $('.ls2').css('height', seasonHeights.season2);
+                break;
+                
+            case 'ls3':
+                $('.ls3').addClass('open');
+                $('.ls3').css('height', seasonHeights.season3);
+                break;
+
+            case 'ls4':
+                $('.ls4').addClass('open');
+                $('.ls4').css('height', seasonHeights.season4);
+                break;
+
+            case 'ls5':
+                $('.ls5').addClass('open');
+                $('.ls5').css('height', seasonHeights.season5);
+                break;
+
+            case 'ls6':
+                $('.ls6').addClass('open');
+                $('.ls6').css('height', seasonHeights.season6);
+                break;
+        }
+    }
+});

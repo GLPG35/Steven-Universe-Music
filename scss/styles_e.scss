@@ -106,7 +106,7 @@ body {
             text-align: center;
             font-family: 'Open Sans', sans-serif;
             font-weight: 800;
-            color: #180f2c;
+            color: #230c4d;
         }
 
         h3 {
@@ -116,8 +116,8 @@ body {
             font-size: clamp(1.5em, calc(-0.500em + 8.333vw), 2em);
             font-family: 'Open Sans', sans-serif;
             font-weight: 700;
-            color: #180f2c;
-            padding-top: 0.2em;
+            color: #230c4d;
+            padding-block: 0.2em;
             border-radius: 1.5em 1.5em 0 0;
 
             &.first {
@@ -148,57 +148,69 @@ body {
             }
         }
 
-        input[type="checkbox"] {
-            display: none;
-        }
-
-        label {
-            display: flex;
-            flex-direction: column;
-            position: relative;
+        .details {
+            transition: 0.8s ease-in-out;
+            height: 3.5em;
             overflow: hidden;
-            cursor: pointer;
-            height: 4em;
-            transition: height 0.8s ease-in-out;
 
-            &.ls1 {
-                .fa-angle-right {
-                    color: #230c4d;
+            &.open {
+                summary {
+                    .fa-angle-right {
+                        transform: rotate(90deg);
+                    }
                 }
             }
 
-            &.ls3 {
+            summary {
+                cursor: pointer;
+                list-style: none;
+                position: relative;
+
+                .fa-angle-right {
+                    position: absolute;
+                    top: 1.2em;
+                    right: 2em;
+                    color: #f0f0f0;
+                    font-size: 1.2em;
+                    z-index: 10;
+                    transition: 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                }
+            }
+        }
+
+
+        .ls1 {
+            .fa-angle-right {
+                color: #230c4d;
+            }
+        }
+
+        .ls3 {
+            summary {
                 background-color: #d87eff;
             }
+        }
 
-            &.ls4 {
+        .ls4 {
+            summary {
                 background-color: #5e1c8a;
             }
+        }
 
-            &.ls5 {
+        .ls5 {
+            summary {
                 background-color: #5214aa;
             }
+        }
 
-            &.ls6 {
-                .fa-angle-right {
-                    color: #230c4d;
-                }
+        .ls6 {
+            .fa-angle-right {
+                color: #230c4d;
+            }
+
+            summary {
                 background-color: #1e010a;
             }
-        }
-
-        .fa-angle-right {
-            position: absolute;
-            top: 1.2em;
-            right: 2em;
-            color: #f0f0f0;
-            font-size: 1.2em;
-            z-index: 10;
-            transition: 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        input[type="checkbox"]:checked + label > .fa-angle-right {
-            transform: rotate(90deg);
         }
 
         .episodes {

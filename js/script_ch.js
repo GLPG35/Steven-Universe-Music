@@ -48,7 +48,7 @@ $('.fa-bars').click(function() {
     gsap.to('.star', 1, {
         transformOrigin: '50% 50%',
         rotation: 90,
-        scale: 10,
+        scale: 15,
         ease: Power2.easeOut
     });
     $('.fa-bars').addClass('active');
