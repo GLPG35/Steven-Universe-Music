@@ -35,7 +35,7 @@ $.get('./js/characters.txt', function(data) {
     characterList.forEach(function(n) {
         let classN = n.character.toLowerCase();
         
-        let charDiv = `<div class="char-container ${classN}">
+        let charDiv = `<li class="splide__slide">
             <div class="bg ${classN}">
                 <img src="${n.bg}" />
             </div>
@@ -51,31 +51,12 @@ $.get('./js/characters.txt', function(data) {
                     <span>${n.description}</span>
                 </div>
             </div>
-        </div>`;
+        </li>`;
 
-        $('.char-scroll').append(charDiv);
+        $('.splide__list').append(charDiv);
     });
-}, 'text');
-
-let scrollObject = {
-    steven: 'translateX(0)',
-    garnet: 'translateX(-100%)',
-    amethyst: 'translateX(-200%)',
-    pearl: 'translateX(-300%)',
-    lapislazuli: 'translateX(-400%)',
-    peridot: 'translateX(-500%)',
-    jasper: 'translateX(-600%)'
-}
-
-$('.btn-scroll a').click(function() {
-    let element = $(this).attr('id');
-
-    $('.btn-scroll a').removeClass('active');
-    $(`#${element}`).addClass('active');
-
-    Object.keys(scrollObject).forEach(key => {
-        if (element == key) {
-            $('.char-container').css('transform', scrollObject[key]);
-        }
-    });
+}, 'text').then(function() {
+    new Splide( '.splide', {
+        speed: 800
+    } ).mount();
 });

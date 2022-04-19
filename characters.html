@@ -10,6 +10,7 @@
     <title>Steven Universe Characters</title>
     <link rel="icon" href="images/icon.webp">
     <link rel="stylesheet" href="fontawesome-free-6.1.0-web/css/all.css">
+    <link rel="stylesheet" href="css/splide-core.min.css">
     <link rel="stylesheet" href="css/styles_ch.css">
 </head>
 <body>
@@ -52,18 +53,13 @@
             </a>
         </div>
         <div class="container2" id="characters">
-            <h2><i class="fas fa-user-group"></i> Characters</h2>
-            <div class="char-scroll">
-                <div class="btn-scroll">
-                    <a class="active" id="steven" href="#steven"></a>
-                    <a id="garnet" href="#garnet"></a>
-                    <a id="amethyst" href="#amethyst"></a>
-                    <a id="pearl" href="#pearl"></a>
-                    <a id="lapislazuli" href="#lapislazuli"></a>
-                    <a id="peridot" href="#peridot"></a>
-                    <a id="jasper" href="#jasper"></a>
+            <h2 id="labelCarousel"><i class="fas fa-user-group"></i> Characters</h2>
+             <div class="splide" role="group" aria-labelledby="labelCarousel">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                    </ul>
                 </div>
-            </div>
+             </div>
         </div>
         <div class="footer"></div>
     </div>
@@ -71,6 +67,7 @@
     <script src="js/svg-loader.min.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/gsap.min.js"></script>
+    <script src="js/splide.min.js"></script>
     <script type="module" src="js/script_ch.js"></script>
 </body>
 </html>
