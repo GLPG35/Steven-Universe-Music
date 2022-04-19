@@ -110,6 +110,7 @@
     left: 0;
     position: fixed;
     z-index: 50;
+    pointer-events: none;
 
     .fa-bars {
         color: var(--primary-clr);
@@ -118,6 +119,7 @@
         transition: 0.2s ease-out;
         position: absolute;
         z-index: 21;
+        pointer-events: auto;
 
         &.active {
             opacity: 0;
@@ -162,6 +164,7 @@
         clip-path: url('#clipPath');
         display: grid;
         place-items: center;
+        pointer-events: auto;
 
         ul {
             list-style-type: none;
@@ -169,6 +172,7 @@
             display: flex;
             gap: 1em;
             flex-direction: column;
+            pointer-events: auto;
 
             li {
                 a {
@@ -179,6 +183,7 @@
                     color: #f0f0f0;
                     transition: 0.2s ease-out;
                     text-transform: uppercase;
+                    pointer-events: auto;
                     
                     &:hover {
                         color: var(--hover-clr);

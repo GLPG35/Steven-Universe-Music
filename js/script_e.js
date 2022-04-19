@@ -1,85 +1,9 @@
-particlesJS (
-    "particles",
+import { particles, headerAnim, playMusic, setFooter, spinner } from "./envs.js";
 
-    {
-        particles: {
-            number: {
-                value: 50,
-                density: {
-                    enable: true,
-                    value_area: 1000
-                }
-            },
-            color: {
-                value: "#f0f0f0"
-            },
-            shape: {
-                type: "star"
-            },
-            size: {
-                value: 7,
-                random: true
-            },
-            move: {
-                enable: true,
-                speed: 1.2,
-                direction: "bottom-left"
-            },
-            line_linked: {
-                enable: false
-            }
-        },
-        interactivity: {
-            events: {
-                onhover: {
-                    enable: false
-                }
-            }
-        }
-    }
-);
-
-let isActive = 0;
-let cooldown = 0;
-let musicClick = 0;
-
-var current_player = "a";
-var player_a = document.createElement("audio");
-var player_b = document.createElement("audio");
-
-player_a.src = "music/Night Drive.opus";
-player_b.src = player_a.src;
-
-function loopIt(){
-    var player = null;
-
-    if(current_player == "a"){
-        player = player_b;
-        current_player = "b";
-    }
-    else{
-        player = player_a;
-        current_player = "a";
-    }
-
-    player.play();
-
-    setTimeout(loopIt, 10679);
-}
-
-$(document).click(function() {
-    if (musicClick == 0) {
-        loopIt();
-        musicClick = 1;
-    }
-});
-
-$(window).on('load', function() {
-    $('.spinner').fadeOut(1000);
-    setTimeout(function() {
-        $('.spinner').remove();
-    }, 1000);
-});
+spinner();
+particles("particles");
+headerAnim();
+playMusic("Night Drive.opus", 10679);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -89,66 +13,7 @@ $(document).ready(function() {
         scaleY: 0,
     });
 
-    $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
-});
-
-$('.fa-bars').mouseenter(function() {
-    if (cooldown == 0) {
-        gsap.to('.star', 0.5, {
-            transformOrigin: '50% 50%',
-            rotation: 45,
-            scale: 0.12,
-            ease: Power2.easeOut
-        });
-    }
-    //$('.star').css('transform', 'scale(0.12) translate(-87%, -185%)');
-}).mouseleave(function() {
-    if (isActive == 0) {
-        gsap.to('.star', 0.5, {
-            transformOrigin: '50% 50%',
-            rotation: 0,
-            scale: 0,
-            ease: Power2.easeOut
-        });
-    }
-});
-
-$('.fa-bars').click(function() {
-    isActive = 1;
-    $('body').css('overflow', 'hidden');
-    $('.fa-bars').css('pointer-events', 'none');
-    $('.fa-times').css('pointer-events', 'all');
-    gsap.to('.star', 1, {
-        transformOrigin: '50% 50%',
-        rotation: 90,
-        scale: 15,
-        ease: Power2.easeOut
-    });
-    $('.fa-bars').addClass('active');
-    $('.fa-times').addClass('active');
-    $('.pinkV').replaceWith(`<img class="bg-img" src="images/temple_pink.webp" />`);
-});
-
-$('.fa-times').click(function() {
-    $('.bg-img').replaceWith(`<video class="pinkV" loop autoplay muted>
-        <source src="images/Temple Pink (Loop).mp4" type="video/mp4">
-    </video>`);
-    isActive = 0;
-    cooldown = 1;
-    $('body').removeAttr('style');
-    $('.fa-times').css('pointer-events', 'none');
-    $('.fa-bars').css('pointer-events', 'all');
-    gsap.to('.star', 1, {
-        transformOrigin: '50% 50%',
-        rotation: 0,
-        scale: 0,
-        ease: Power2.easeOut
-    });
-    $('.fa-bars').removeClass('active');
-    $('.fa-times').removeClass('active');
-    setTimeout(function() {
-        cooldown = 0;
-    }, 1500);
+    setFooter();
 });
 
 $('body').on('mouseenter', '.episode', function() {
