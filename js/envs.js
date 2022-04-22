@@ -83,6 +83,7 @@ export function musicCookie(trackV, msV) {
         $('body').on('click', '.closeDialog', function() {
             if (!($('.yesno').is(':checked'))) {
                 Cookies.set('music', 0, { expires: 1 });
+                cookieInitial = 0;
                 $('.header .menu ul').after(`<div class="toggleC">
                     <div class="toggleM">
                         <i class="fas fa-check"></i>
@@ -90,9 +91,11 @@ export function musicCookie(trackV, msV) {
                         <div class="circle"><i class="fas fa-music"></i></div>
                     </div>
                     <input type="checkbox" class="yesnoM">
+                    <i class="fas fa-sync-alt"></i>
                 </div>`);
             } else {
                 Cookies.set('music', 1, { expires: 1 });
+                cookieInitial = 1;
                 playMusic(trackV, msV);
                 $('.header .menu ul').after(`<div class="toggleC">
                 <div class="toggleM active">
@@ -101,6 +104,7 @@ export function musicCookie(trackV, msV) {
                     <div class="circle"><i class="fas fa-music"></i></div>
                 </div>
                 <input type="checkbox" class="yesnoM">
+                <i class="fas fa-sync-alt"></i>
             </div>`);
             }
 
@@ -127,7 +131,11 @@ export function musicCookie(trackV, msV) {
         }
     }
 
-    var cookieInitial = Cookies.get('music');
+    var cookieInitial;
+
+    if (Cookies.get('music') != undefined) {
+        cookieInitial = Cookies.get('music');
+    }
 
     $('body').on('click', '.toggleM', function() {
         if (!($('.yesnoM').is(':checked'))) {
