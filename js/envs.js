@@ -117,6 +117,7 @@ export function musicCookie(trackV, msV) {
                 <div class="circle"><i class="fas fa-music"></i></div>
             </div>
             <input type="checkbox" class="yesnoM">
+            <i class="fas fa-sync-alt"></i>
         </div>`);
 
         if (Cookies.get('music') == 1) {
@@ -126,40 +127,140 @@ export function musicCookie(trackV, msV) {
         }
     }
 
+    var cookieInitial = Cookies.get('music');
+
     $('body').on('click', '.toggleM', function() {
         if (!($('.yesnoM').is(':checked'))) {
+            if (cookieInitial == 0) {
+                $('.fa-sync-alt').addClass('active');
+            } else if ((cookieInitial == 1) && ($('.fa-sync-alt').hasClass('active'))) {
+                $('.fa-sync-alt').removeClass('active');
+            }
+
             Cookies.set('music', 1, { expires: 1 });
             $('.toggleM').addClass('active');
             $('.yesnoM').prop('checked', true);
         } else {
+            if (cookieInitial == 1) {
+                $('.fa-sync-alt').addClass('active');
+            } else if ((cookieInitial == 0) && ($('.fa-sync-alt').hasClass('active'))) {
+                $('.fa-sync-alt').removeClass('active');
+            }
+
             Cookies.set('music', 0, { expires: 1 });
             $('.toggleM').removeClass('active');
             $('.yesnoM').prop('checked', false);
         }
     });
+
+    $('body').on('click', '.fa-sync-alt', function() {
+        if (cookieInitial == 1) {
+            var volume = 1.00;
+
+            if (current_player == 'a') {
+                var fade = setInterval(function() {
+                    if (volume > 0.01) {
+                        volume -= 0.1;
+                        player_a.volume = volume;
+                    } else {
+                        clearInterval(fade);
+                        window.location.reload(false);
+                    }
+                }, 100);
+            } else {
+                var fade = setInterval(function() {
+                    if (volume > 0.01) {
+                        volume -= 0.1;
+                        player_b.volume = volume;
+                    } else {
+                        clearInterval(fade);
+                        window.location.reload(false);
+                    }
+                }, 100);
+            }
+        } else {
+            window.location.reload(false);
+        }
+    });
+
+    $('.menu a').click(function(e) {
+        let link = $(this).attr('href');
+        e.preventDefault();
+        
+        if (cookieInitial == 1) {
+            var volume = 1.00;
+
+            if (current_player == 'a') {
+                var fade = setInterval(function() {
+                    if (volume > 0.01) {
+                        volume -= 0.1;
+                        player_a.volume = volume;
+                    } else {
+                        clearInterval(fade);
+                        window.location.href = link;
+                    }
+                }, 100);
+            } else {
+                var fade = setInterval(function() {
+                    if (volume > 0.01) {
+                        volume -= 0.1;
+                        player_b.volume = volume;
+                    } else {
+                        clearInterval(fade);
+                        window.location.href = link;
+                    }
+                }, 100);
+            }
+        } else {
+            window.location.href = link;
+        }
+    });
 }
 
+var current_player;
+var player_a;
+var player_b;
+
 export function playMusic(track, ms) {
-    var current_player = "a";
-    var player_a = document.createElement("audio");
-    var player_b = document.createElement("audio");
+    var volume = 0.00;
+    var firstTime = true;
+    current_player = "a";
+    player_a = document.createElement("audio");
+    player_b = document.createElement("audio");
 
     player_a.src = `music/${track}`;
     player_b.src = player_a.src;
 
-    function loopIt(){
+    function loopIt() {
         var player = null;
 
-        if(current_player == "a"){
+        if(current_player == "a") {
             player = player_b;
             current_player = "b";
         }
-        else{
+
+        else {
             player = player_a;
             current_player = "a";
         }
 
-        player.play();
+        if (firstTime == true) {
+            player.volume = 0.00;
+            player.play();
+
+            var fadeIn = setInterval(function() {
+                if (volume < 0.95) {
+                    volume += 0.05;
+                    let rVolume = (Math.ceil(volume*20)/20).toFixed(2)
+                    player.volume = rVolume;
+                } else {
+                    firstTime = false;
+                    clearInterval(fadeIn);
+                }
+            }, 50);
+        } else {
+            player.play();
+        }
 
         setTimeout(loopIt, ms);
     }

@@ -504,11 +504,35 @@
   display: none;
 }
 
+.header .menu .toggleC .fa-sync-alt {
+  position: absolute;
+  font-size: 1.2em;
+  color: #f0f0f0;
+  -webkit-transform: translateX(3.5em) scale(0) rotate(-360deg);
+          transform: translateX(3.5em) scale(0) rotate(-360deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: color 0.2s ease-out, -webkit-transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: color 0.2s ease-out, -webkit-transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8), color 0.2s ease-out;
+  transition: transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8), color 0.2s ease-out, -webkit-transform 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.header .menu .toggleC .fa-sync-alt.active {
+  -webkit-transform: translateX(3.5em) scale(1) rotate(0);
+          transform: translateX(3.5em) scale(1) rotate(0);
+}
+
+.header .menu .toggleC .fa-sync-alt:hover {
+  color: var(--hover-clr);
+  cursor: pointer;
+}
+
 .header .menu .toggleC .toggleM {
   width: 5em;
   height: 2.5em;
   border-radius: 100vh;
-  background-color: #49429880;
+  background-color: var(--hover-clr);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -569,7 +593,7 @@
 }
 
 .header .menu .toggleC .toggleM .circle .fa-music {
-  color: #494298;
+  color: var(--hover-clr);
 }
 
 .header .menu .toggleC .toggleM.active {

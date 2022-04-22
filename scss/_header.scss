@@ -360,11 +360,29 @@
                 display: none;
             }
 
+            .fa-sync-alt {
+                position: absolute;
+                font-size: 1.2em;
+                color: #f0f0f0;
+                transform: translateX(3.5em) scale(0) rotate(-360deg);
+                transform-origin: center;
+                transition: transform 0.5s cubic-bezier(.47,1.64,.41,.8), color 0.2s ease-out;
+
+                &.active {
+                    transform: translateX(3.5em) scale(1) rotate(0);
+                }
+
+                &:hover {
+                    color: var(--hover-clr);
+                    cursor: pointer;
+                }
+            }
+
             .toggleM {
                 width: 5em;
                 height: 2.5em;
                 border-radius: 100vh;
-                background-color: #49429880;
+                background-color: var(--hover-clr);
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -409,7 +427,7 @@
                     align-items: center;
 
                     .fa-music {
-                        color: #494298;
+                        color: var(--hover-clr);
                     }
                 }
     
