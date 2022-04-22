@@ -90,6 +90,7 @@ export function musicCookie(trackV, msV) {
                         <div class="circle"><i class="fas fa-music"></i></div>
                     </div>
                     <input type="checkbox" class="yesnoM">
+                    <i class="fas fa-sync-alt"></i>
                 </div>`);
             } else {
                 Cookies.set('music', 1, { expires: 1 });
@@ -101,6 +102,7 @@ export function musicCookie(trackV, msV) {
                     <div class="circle"><i class="fas fa-music"></i></div>
                 </div>
                 <input type="checkbox" class="yesnoM">
+                <i class="fas fa-sync-alt"></i>
             </div>`);
             }
 
