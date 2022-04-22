@@ -1,8 +1,7 @@
-import { headerAnim, playMusic, setFooter, spinner } from "./envs.js";
+import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
-playMusic("No Gem Wars at the Table.opus", 93510);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -12,6 +11,7 @@ $(document).ready(function() {
         scaleY: 0,
     });
 
+    musicCookie("No Gem Wars at the Table.opus", 93510);
     setFooter();
     creditsAnim();
 

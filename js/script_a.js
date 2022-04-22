@@ -1,8 +1,6 @@
-import { spinner, playMusic, headerAnim, setFooter } from './envs.js';
+import { spinner, playMusic, headerAnim, setFooter, musicCookie } from './envs.js';
 
 spinner();
-
-playMusic("The Answer.opus", 60778);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -12,6 +10,7 @@ $(document).ready(function() {
         scaleY: 0,
     });
 
+    musicCookie("The Answer.opus", 60778);
     setFooter();
     aboutAnim();
 

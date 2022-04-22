@@ -1,4 +1,4 @@
-import { headerAnim, playMusic, setFooter, spinner } from "./envs.js";
+import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
@@ -12,6 +12,7 @@ $(document).ready(function() {
         scaleY: 0,
     });
 
+    musicCookie("luv u.opus", 64025);
     setFooter();
 });
 

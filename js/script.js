@@ -1,9 +1,8 @@
-import { headerAnim, particles, playMusic, setFooter, spinner } from "./envs.js";
+import { headerAnim, musicCookie, particles, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
 particles("particles");
-playMusic("I'm Still Here.opus", 70280);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -12,6 +11,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+
+    musicCookie("I'm Still Here.opus", 70280);
 
     let gridCS = window.getComputedStyle(grid);
 

@@ -1,9 +1,8 @@
-import { particles, headerAnim, playMusic, setFooter, spinner } from "./envs.js";
+import { particles, headerAnim, playMusic, setFooter, spinner, musicCookie } from "./envs.js";
 
 spinner();
 particles("particles");
 headerAnim();
-playMusic("Night Drive.opus", 10679);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -13,6 +12,7 @@ $(document).ready(function() {
         scaleY: 0,
     });
 
+    musicCookie("Night Drive.opus", 10679);
     setFooter();
 });
 

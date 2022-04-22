@@ -50,9 +50,96 @@ export function particles(container) {
     );
 }
 
-export function playMusic(track, ms) {
-    let musicClick = 0;
+export function musicCookie(trackV, msV) {
+    if (Cookies.get('music') == undefined) {
+        setTimeout(function() {
+            $('.header').before(`<div class="cookies">
+                <div class="saveDialog">
+                    <button class="closeDialog"><i class="fas fa-chevron-up"></i></button>
+                    <span class="msg1">This site has ambient music to improve the user experience.</span>
+                    <span class="msg2">Do you want to enable it?</span>
+                    <div class="yesnoT">
+                        <div class="toggle">
+                            <i class="fas fa-check"></i>
+                            <i class="fas fa-times"></i>
+                            <div class="circle"><i class="fas fa-music"></i></div>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="yesno" class="yesno">
+                </div>
+            </div>`);
+        }, 1000);
 
+        $('body').on('click', '.toggle', function() {
+            if (!($('.yesno').is(':checked'))) {
+                $('.toggle').addClass('active');
+                $('.yesno').prop('checked', true);
+            } else {
+                $('.toggle').removeClass('active');
+                $('.yesno').prop('checked', false);
+            }
+        });
+
+        $('body').on('click', '.closeDialog', function() {
+            if (!($('.yesno').is(':checked'))) {
+                Cookies.set('music', 0, { expires: 1 });
+                $('.header .menu ul').after(`<div class="toggleC">
+                    <div class="toggleM">
+                        <i class="fas fa-check"></i>
+                        <i class="fas fa-timess"></i>
+                        <div class="circle"><i class="fas fa-music"></i></div>
+                    </div>
+                    <input type="checkbox" class="yesnoM">
+                </div>`);
+            } else {
+                Cookies.set('music', 1, { expires: 1 });
+                playMusic(trackV, msV);
+                $('.header .menu ul').after(`<div class="toggleC">
+                <div class="toggleM active">
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-timess"></i>
+                    <div class="circle"><i class="fas fa-music"></i></div>
+                </div>
+                <input type="checkbox" class="yesnoM">
+            </div>`);
+            }
+
+            $('.cookies').addClass('active');
+            setTimeout(function() {
+                $('.cookies').remove();
+            }, 1000);
+        });
+    } else {
+        $('.header .menu ul').after(`<div class="toggleC">
+            <div class="toggleM">
+                <i class="fas fa-check"></i>
+                <i class="fas fa-timess"></i>
+                <div class="circle"><i class="fas fa-music"></i></div>
+            </div>
+            <input type="checkbox" class="yesnoM">
+        </div>`);
+
+        if (Cookies.get('music') == 1) {
+            playMusic(trackV, msV);
+            $('.toggleM').addClass('active');
+            $('.yesnoM').prop('checked', true);
+        }
+    }
+
+    $('body').on('click', '.toggleM', function() {
+        if (!($('.yesnoM').is(':checked'))) {
+            Cookies.set('music', 1, { expires: 1 });
+            $('.toggleM').addClass('active');
+            $('.yesnoM').prop('checked', true);
+        } else {
+            Cookies.set('music', 0, { expires: 1 });
+            $('.toggleM').removeClass('active');
+            $('.yesnoM').prop('checked', false);
+        }
+    });
+}
+
+export function playMusic(track, ms) {
     var current_player = "a";
     var player_a = document.createElement("audio");
     var player_b = document.createElement("audio");
@@ -77,12 +164,7 @@ export function playMusic(track, ms) {
         setTimeout(loopIt, ms);
     }
 
-    $(document).click(function() {
-        if (musicClick == 0) {
-            loopIt();
-            musicClick = 1;
-        }
-    });
+    loopIt();
 }
 
 export function setFooter() {

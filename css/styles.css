@@ -9,65 +9,86 @@
 
 @-webkit-keyframes logoSU {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(24%);
+    -webkit-transform: translateX(24%);
+            transform: translateX(24%);
   }
 }
 
 @keyframes logoSU {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(24%);
+    -webkit-transform: translateX(24%);
+            transform: translateX(24%);
   }
 }
+
 @-webkit-keyframes arrow {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   50% {
-    transform: translateY(1em);
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
   }
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
+
 @keyframes arrow {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
   50% {
-    transform: translateY(1em);
+    -webkit-transform: translateY(1em);
+            transform: translateY(1em);
   }
   100% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
+
 @-webkit-keyframes spin {
   0% {
-    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
   50% {
-    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
   100% {
-    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
 }
+
 @keyframes spin {
   0% {
-    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
   50% {
-    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
   100% {
-    transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+            transform: rotateY(0);
   }
 }
+
 @-webkit-keyframes credits1 {
   from {
     opacity: 0;
@@ -76,6 +97,7 @@
     opacity: 1;
   }
 }
+
 @keyframes credits1 {
   from {
     opacity: 0;
@@ -84,6 +106,7 @@
     opacity: 1;
   }
 }
+
 @-webkit-keyframes credits2 {
   from {
     opacity: 1;
@@ -92,6 +115,7 @@
     opacity: 0;
   }
 }
+
 @keyframes credits2 {
   from {
     opacity: 1;
@@ -100,26 +124,67 @@
     opacity: 0;
   }
 }
+
+@-webkit-keyframes cookies {
+  from {
+    -webkit-transform: translateY(-20em);
+            transform: translateY(-20em);
+  }
+  to {
+    -webkit-transform: translateY(2em);
+            transform: translateY(2em);
+  }
+}
+
+@keyframes cookies {
+  from {
+    -webkit-transform: translateY(-20em);
+            transform: translateY(-20em);
+  }
+  to {
+    -webkit-transform: translateY(2em);
+            transform: translateY(2em);
+  }
+}
+
+@-webkit-keyframes cookies2 {
+  to {
+    -webkit-transform: translateY(-20em);
+            transform: translateY(-20em);
+  }
+}
+
+@keyframes cookies2 {
+  to {
+    -webkit-transform: translateY(-20em);
+            transform: translateY(-20em);
+  }
+}
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
   width: 0.5em;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: var(--bar-clr);
   border-radius: 15px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--bar-hover-clr);
 }
+
 ::-webkit-scrollbar-track {
   background-color: #f0f0f0;
 }
@@ -129,8 +194,187 @@
   left: 0;
   top: 0;
 }
+
 .menuClip .star {
-  transform: scale(0) translate(1%, 0);
+  -webkit-transform: scale(0) translate(1%, 0);
+          transform: scale(0) translate(1%, 0);
+}
+
+.cookies {
+  height: 6em;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateY(2em);
+          transform: translateY(2em);
+  z-index: 50;
+  -webkit-animation: cookies 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4) forwards;
+          animation: cookies 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4) forwards;
+}
+
+.cookies.active {
+  -webkit-animation: cookies2 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4) forwards;
+          animation: cookies2 0.8s cubic-bezier(0.8, -0.5, 0.2, 1.4) forwards;
+  pointer-events: none;
+}
+
+.cookies .saveDialog {
+  width: 40%;
+  height: 100%;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 0 0 #c0c0c0;
+          box-shadow: 0 10px 0 0 #c0c0c0;
+  border-radius: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+  position: relative;
+  -webkit-transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cookies .saveDialog .closeDialog {
+  width: 4em;
+  height: 2em;
+  border-radius: 100vh;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0 5px 0 0 #c0c0c0;
+          box-shadow: 0 5px 0 0 #c0c0c0;
+  -ms-grid-row-align: center;
+      align-self: center;
+  right: 0;
+  bottom: -1em;
+  position: absolute;
+  font-size: 1.2em;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.cookies .saveDialog .closeDialog:hover {
+  cursor: pointer;
+}
+
+.cookies .saveDialog .msg1 {
+  font-weight: 600;
+}
+
+.cookies .saveDialog .msg2 {
+  font-weight: 800;
+}
+
+.cookies .saveDialog .yesnoT {
+  width: 10em;
+  height: 4em;
+  position: absolute;
+  bottom: -3em;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-radius: 100vh;
+  padding: 0.5em 1em;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 0 0 #c0c0c0;
+          box-shadow: 0 10px 0 0 #c0c0c0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cookies .saveDialog .yesnoT .toggle {
+  width: 5em;
+  height: 2.5em;
+  border-radius: 100vh;
+  background-color: #1f1b4d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-inline: 1em;
+  position: relative;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.cookies .saveDialog .yesnoT .toggle:hover {
+  cursor: pointer;
+}
+
+.cookies .saveDialog .yesnoT .toggle i {
+  color: #f0f0f0;
+}
+
+.cookies .saveDialog .yesnoT .toggle .circle {
+  position: absolute;
+  left: 0.3em;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  -webkit-transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cookies .saveDialog .yesnoT .toggle .circle .fa-music {
+  color: #494298;
+}
+
+.cookies .saveDialog .yesnoT .toggle.active {
+  background-color: #1ea234;
+}
+
+.cookies .saveDialog .yesnoT .toggle.active .circle {
+  left: initial;
+  -webkit-transform: translateX(87%);
+          transform: translateX(87%);
+}
+
+.cookies .saveDialog .yesnoT .toggle.active .circle .fa-music {
+  color: #1ea234;
+}
+
+.cookies .saveDialog .yesno {
+  display: none;
 }
 
 .header {
@@ -142,78 +386,210 @@
   z-index: 50;
   pointer-events: none;
 }
+
 .header .fa-bars {
   color: var(--primary-clr);
-  transform: translate(0.9em, 0.9em);
+  -webkit-transform: translate(0.9em, 0.9em);
+          transform: translate(0.9em, 0.9em);
   font-size: 1.7em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   position: absolute;
   z-index: 21;
   pointer-events: auto;
 }
+
 .header .fa-bars.active {
   opacity: 0;
   visibility: 0;
 }
+
 .header .fa-bars:hover {
   color: var(--hover-clr);
   cursor: pointer;
 }
+
 .header .fa-times {
   position: absolute;
   font-size: 1.9em;
   color: #f0f0f0;
-  transform: translate(0.9em, 0.8em);
+  -webkit-transform: translate(0.9em, 0.8em);
+          transform: translate(0.9em, 0.8em);
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 21;
   opacity: 0;
   visibility: 0;
   pointer-events: none;
 }
+
 .header .fa-times.active {
   opacity: 1;
   visibility: 1;
 }
+
 .header .fa-times:hover {
   color: var(--hover-clr);
   cursor: pointer;
 }
+
 .header .menu {
   width: 100%;
   height: 100vh;
   background-color: var(--bg-clr);
   position: fixed;
   z-index: 20;
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
   -webkit-clip-path: url("#clipPath");
           clip-path: url("#clipPath");
+  display: -ms-grid;
   display: grid;
   place-items: center;
   pointer-events: auto;
 }
+
 .header .menu ul {
   list-style-type: none;
   text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1em;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   pointer-events: auto;
 }
+
 .header .menu ul li a {
   font-size: 1.5em;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   text-decoration: none;
   color: #f0f0f0;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   text-transform: uppercase;
   pointer-events: auto;
 }
+
 .header .menu ul li a:hover {
   color: var(--hover-clr);
 }
+
 .header .menu ul li a i {
   font-size: 1em;
+}
+
+.header .menu .toggleC {
+  width: 100%;
+  height: 6em;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menu .toggleC .yesnoM {
+  display: none;
+}
+
+.header .menu .toggleC .toggleM {
+  width: 5em;
+  height: 2.5em;
+  border-radius: 100vh;
+  background-color: #49429880;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-inline: 1em;
+  position: relative;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.header .menu .toggleC .toggleM.active {
+  background-color: #1ea234;
+}
+
+.header .menu .toggleC .toggleM.active .circle {
+  left: initial;
+  -webkit-transform: translateX(87%);
+          transform: translateX(87%);
+}
+
+.header .menu .toggleC .toggleM:hover {
+  cursor: pointer;
+}
+
+.header .menu .toggleC .toggleM i {
+  color: #f0f0f0;
+}
+
+.header .menu .toggleC .toggleM .fa-timess::before {
+  content: '\f00d';
+}
+
+.header .menu .toggleC .toggleM .circle {
+  position: absolute;
+  left: 0.3em;
+  -ms-flex-item-align: center;
+      align-self: center;
+  height: 80%;
+  aspect-ratio: 1 / 1;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  -webkit-transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .menu .toggleC .toggleM .circle .fa-music {
+  color: #494298;
+}
+
+.header .menu .toggleC .toggleM.active {
+  background-color: #1ea234;
+}
+
+.header .menu .toggleC .toggleM.active .circle {
+  left: initial;
+  -webkit-transform: translateX(87%);
+          transform: translateX(87%);
+}
+
+.header .menu .toggleC .toggleM.active .circle .fa-music {
+  color: #1ea234;
+}
+
+@media (max-width: 700px) {
+  .cookies .saveDialog {
+    width: 80%;
+  }
 }
 
 :root {
@@ -234,10 +610,17 @@ body {
   position: fixed;
   z-index: 100;
   background-color: #3b2674;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .spinner .spinIcon {
   width: auto;
   height: 20%;
@@ -253,16 +636,28 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .containerP .container1 {
   width: 100%;
   height: 100vh;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: linear-gradient(to top, #1c103d, rgba(255, 255, 255, 0));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left bottom, left top, from(#1c103dff), to(#ffffff00));
+  background: linear-gradient(to top, #1c103dff, #ffffff00);
 }
+
 .containerP .container1 img {
   width: 100%;
   height: 100%;
@@ -271,33 +666,40 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .containerP .container1 .sulogo {
   width: 50%;
   height: auto;
   position: absolute;
   z-index: 10;
 }
+
 .containerP .container1 .sulogo .SUMLogo {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
+
 .containerP .container1 a {
   position: absolute;
   bottom: 5em;
   -webkit-animation: arrow 2s ease-in-out infinite forwards;
           animation: arrow 2s ease-in-out infinite forwards;
 }
+
 .containerP .container1 a .fa-chevron-down {
   font-size: 2.5em;
   color: #f0f0f0;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container1 a .fa-chevron-down:hover {
   color: #8481c6;
   cursor: pointer;
 }
+
 .containerP .container2 {
   width: 100%;
   height: -webkit-max-content;
@@ -305,51 +707,69 @@ body {
   height: max-content;
   padding: 2em 1em;
 }
+
 .containerP .container2 h2 {
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding-bottom: 1.5em;
-  font-size: clamp(2em, -0.875em + 8.333vw, 4em);
+  font-size: clamp(2em, calc(-0.875em + 8.333vw), 4em);
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 800;
   color: #f0f0f0;
 }
+
 .containerP .container2 .music-grid {
   min-height: 100vh;
   width: 100%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+  -ms-grid-columns: (minmax(20em, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
   grid-auto-rows: -webkit-max-content;
   grid-auto-rows: max-content;
   gap: 2em;
 }
+
 .containerP .container2 .music-grid .album1 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album1:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album1:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album1 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album1 .boxImage img {
   width: 100%;
   height: 100%;
@@ -357,35 +777,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album1 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album1 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album1 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -395,57 +826,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album1 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album1 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album1 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album1 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album2 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album2:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album2:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album2 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album2 .boxImage img {
   width: 100%;
   height: 100%;
@@ -453,35 +916,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album2 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album2 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album2 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -491,57 +965,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album2 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album2 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album2 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album2 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album3 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album3:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album3:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album3 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album3 .boxImage img {
   width: 100%;
   height: 100%;
@@ -549,35 +1055,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album3 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album3 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album3 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -587,57 +1104,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album3 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album3 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album3 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album3 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album4 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album4:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album4:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album4 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album4 .boxImage img {
   width: 100%;
   height: 100%;
@@ -645,35 +1194,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album4 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album4 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album4 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -683,57 +1243,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album4 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album4 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album4 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album4 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album5 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album5:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album5:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album5 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album5 .boxImage img {
   width: 100%;
   height: 100%;
@@ -741,35 +1333,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album5 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album5 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album5 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -779,57 +1382,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album5 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album5 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album5 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album5 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album6 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album6:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album6:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album6 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album6 .boxImage img {
   width: 100%;
   height: 100%;
@@ -837,35 +1472,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album6 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album6 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album6 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -875,57 +1521,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album6 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album6 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album6 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album6 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album7 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album7:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album7:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album7 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album7 .boxImage img {
   width: 100%;
   height: 100%;
@@ -933,35 +1611,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album7 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album7 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album7 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -971,57 +1660,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album7 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album7 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album7 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album7 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album8 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album8:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album8:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album8 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album8 .boxImage img {
   width: 100%;
   height: 100%;
@@ -1029,35 +1750,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album8 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album8 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album8 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1067,57 +1799,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album8 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album8 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album8 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album8 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album9 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album9:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album9:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album9 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album9 .boxImage img {
   width: 100%;
   height: 100%;
@@ -1125,35 +1889,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album9 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album9 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album9 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1163,57 +1938,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album9 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album9 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album9 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album9 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album10 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album10:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album10:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album10 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album10 .boxImage img {
   width: 100%;
   height: 100%;
@@ -1221,35 +2028,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album10 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album10 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album10 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1259,57 +2077,89 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album10 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album10 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album10 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album10 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album11 {
   width: 100%;
   height: auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album11:hover .boxImage {
-  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
 }
+
 .containerP .container2 .music-grid .album11:hover .buttons {
-  transform: translateY(0%);
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
 }
+
 .containerP .container2 .music-grid .album11 .boxImage {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: -1;
   position: absolute;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album11 .boxImage img {
   width: 100%;
   height: 100%;
@@ -1317,35 +2167,46 @@ body {
      object-fit: cover;
   border-radius: 25px;
 }
+
 .containerP .container2 .music-grid .album11 .buttons {
   height: 20%;
   width: 100%;
   border-radius: 0 0 25px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #3e3a8b;
   position: absolute;
   z-index: 1;
   bottom: 0;
+  -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
 }
+
 .containerP .container2 .music-grid .album11 .buttons::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   width: 50%;
   height: 60%;
-  border-right: solid 3px rgba(17, 17, 17, 0.4392156863);
+  border-right: solid 3px #11111170;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   pointer-events: none;
 }
+
 .containerP .container2 .music-grid .album11 .buttons::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1355,43 +2216,67 @@ body {
   background-color: var(--color);
   -webkit-clip-path: circle(var(--album_1));
           clip-path: circle(var(--album_1));
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
+
 .containerP .container2 .music-grid .album11 .buttons a {
   text-decoration: none;
   color: #f0f0f0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 1.2em;
+  -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
+
 .containerP .container2 .music-grid .album11 .buttons a:hover {
-  color: rgba(17, 17, 17, 0.6);
+  color: #11111199;
 }
+
 .containerP .container2 .music-grid .album11 .buttons .btn1 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .container2 .music-grid .album11 .buttons .btn2 {
   width: 50%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .containerP .footer {
   height: 0.7em;
   width: 100%;
   padding: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #00000033;
 }
+
 .containerP .footer span {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #f0f0f0;
   font-size: 0.7em;
 }
@@ -1402,6 +2287,7 @@ body {
 }
 
 .floatingchat-container-wrap, .floatingchat-container-wrap-mobi {
+  -webkit-transition: 0.5s ease-out;
   transition: 0.5s ease-out;
 }
 
@@ -1409,18 +2295,21 @@ body {
   opacity: 0;
   visibility: 0;
   pointer-events: none;
-  transform: translateY(2em);
+  -webkit-transform: translateY(2em);
+          transform: translateY(2em);
 }
 
 .show {
   opacity: 1;
   visibility: 1;
   pointer-events: all;
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 @media (max-width: 700px) {
   .containerP .container1 .sulogo {
     width: 90%;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+/*# sourceMappingURL=styles.css.map */

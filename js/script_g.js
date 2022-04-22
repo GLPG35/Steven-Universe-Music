@@ -1,8 +1,7 @@
-import { headerAnim, playMusic, setFooter, spinner } from "./envs.js";
+import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
-playMusic("Lion's Mane.opus", 64835);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {
@@ -11,6 +10,8 @@ $(document).ready(function() {
         scaleX: 0,
         scaleY: 0,
     });
+
+    musicCookie("Lion's Mane.opus", 64835);
 
     let gridCS = window.getComputedStyle(grid);
 
