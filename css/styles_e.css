@@ -2329,7 +2329,7 @@ body {
   
   .containerP img {
     -o-object-position: -10em !important;
-        object-positon: -10em !important;
+       object-position: -10em !important;
   }
 }
 /*# sourceMappingURL=styles_e.css.map */
