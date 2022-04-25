@@ -75,18 +75,6 @@ $('.movie').mouseenter(function() {
     });
 });
 
-$(document).scroll(function() {
-    let scroll = $(document).scrollTop();
-
-    if (scroll > 300) {
-        $('.pinkV').replaceWith(`<img class="bg-img" src="images/temple_pink.webp" />`);
-    } else {
-        $('.bg-img').replaceWith(`<video class="pinkV" loop autoplay muted>
-            <source src="images/Temple Pink (Loop).mp4" type="video/mp4">
-        </video>`);
-    }
-});
-
 let season1 = [];
 let season2 = [];
 let season3 = [];
