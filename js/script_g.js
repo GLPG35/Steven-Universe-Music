@@ -1,4 +1,4 @@
-import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
+import { changeVideo, headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
@@ -24,6 +24,7 @@ $(document).ready(function() {
     }
 
     setFooter();
+    changeVideo('Bismuth Title (Clear)-1');
 });
 
 $('.game').mouseenter(function() {

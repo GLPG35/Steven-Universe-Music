@@ -1,4 +1,4 @@
-import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
+import { changeVideo, headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
@@ -14,6 +14,7 @@ $(document).ready(function() {
     musicCookie("No Gem Wars at the Table.opus", 93510);
     setFooter();
     creditsAnim();
+    changeVideo('Barn Background (Looping)-1');
 
     window.setInterval(creditsAnim, 15000);
 });

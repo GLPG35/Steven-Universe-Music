@@ -1,4 +1,4 @@
-import { headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
+import { changeVideo, headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
@@ -14,6 +14,7 @@ $(document).ready(function() {
 
     musicCookie("luv u.opus", 64025);
     setFooter();
+    changeVideo('Sunrise Driving (Loop)-1');
 });
 
 let characterList = [];

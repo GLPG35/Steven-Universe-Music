@@ -1,4 +1,4 @@
-import { particles, headerAnim, playMusic, setFooter, spinner, musicCookie } from "./envs.js";
+import { particles, headerAnim, playMusic, setFooter, spinner, musicCookie, changeVideo } from "./envs.js";
 
 spinner();
 particles("particles");
@@ -14,6 +14,7 @@ $(document).ready(function() {
 
     musicCookie("Night Drive.opus", 10679);
     setFooter();
+    changeVideo('Temple Pink (Loop)-1', 'Future-1')
 });
 
 $('body').on('mouseenter', '.episode', function() {

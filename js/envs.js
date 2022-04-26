@@ -280,6 +280,33 @@ export function setFooter() {
     $('.footer').prepend(`<span>&copy; ${(new Date).getFullYear()} Gian Luca Porto</span>`);
 }
 
+export function changeVideo(src, episodes = null) {
+    let webm = document.createElement('source');
+
+    webm.src = `images/${src}.webm`;
+    webm.type = 'video/webm';
+
+    if (episodes != null) {
+        let webm2 = document.createElement('source');
+        
+        webm2.src = `images/${episodes}.webm`;
+        webm2.type = 'video/webm';
+
+        if ($(window).width() < 700) {
+            $('.pinkV').prepend(webm);
+            $('.futureV').prepend(webm2);
+            $('.pinkV')[0].load();
+            $('.futureV')[0].load();
+        }
+    } else {
+        if ($(window).width() < 700) {
+            $('video').prepend(webm);
+            $('video')[0].load();
+        }
+    }
+    
+}
+
 export function headerAnim() {
     let isActive = 0;
     let cooldown = 0;

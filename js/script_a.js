@@ -1,4 +1,4 @@
-import { spinner, playMusic, headerAnim, setFooter, musicCookie } from './envs.js';
+import { spinner, changeVideo, headerAnim, setFooter, musicCookie } from './envs.js';
 
 spinner();
 
@@ -13,6 +13,7 @@ $(document).ready(function() {
     musicCookie("The Answer.opus", 60778);
     setFooter();
     aboutAnim();
+    changeVideo('Kindergarten Title-1');
 
     window.setInterval(aboutAnim, 25000);
 });
