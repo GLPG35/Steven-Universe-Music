@@ -118,7 +118,7 @@ function rwEpisodes(season, number, grid) {
     
             episodeContainer = `<div class="episode ${number + 'E' + countE}">
                 <div class="thumbnail">
-                    <img src="thumbnails/${number}${['E' + countE]}.webp">
+                    <img src="thumbnails/${number}${['E' + countE]}.webp" loading="lazy">
                 </div>
                 <div class="name">
                     <h3>${n.title}</h3>
