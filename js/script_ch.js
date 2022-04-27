@@ -1,8 +1,7 @@
-import { changeVideo, headerAnim, musicCookie, playMusic, setFooter, spinner } from "./envs.js";
+import { changeVideo, headerAnim, musicCookie, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
-playMusic("luv u.opus", 64025);
 
 $(document).ready(function() {
     gsap.to('.star', 1, {

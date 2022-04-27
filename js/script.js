@@ -1,4 +1,4 @@
-import { headerAnim, musicCookie, particles, playMusic, setFooter, spinner } from "./envs.js";
+import { headerAnim, musicCookie, particles, setFooter, spinner } from "./envs.js";
 
 spinner();
 headerAnim();
